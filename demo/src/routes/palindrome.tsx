@@ -11,7 +11,7 @@ import {
   Stack,
   Alert,
 } from "@mantine/core"
-import { IconRefresh, IconInfoCircle, IconCheck, IconX } from "@tabler/icons-react"
+import { IconRefresh, IconCheck, IconX } from "@tabler/icons-react"
 import { isPalindrome } from "../lib"
 
 export const Route = createFileRoute("/palindrome")({
