@@ -1,6 +1,14 @@
 import { beforeEach, describe, expect, it } from "vitest"
 
-import { celsiusToFahrenheit, filterEvenNumbers, formatPerson, helloWorld, isPalindrome, sum } from "../src"
+import {
+  celsiusToFahrenheit,
+  filterEvenNumbers,
+  formatPerson,
+  helloWorld,
+  isPalindrome,
+  reverseString,
+  sum,
+} from "../src"
 
 describe("HelloWorld", () => {
   beforeEach(async () => {
@@ -96,5 +104,27 @@ describe("formatPerson", () => {
   it("should format person with email", () => {
     const person = { name: "Bob", age: 25, email: "bob@example.com" }
     expect(formatPerson(person)).toBe("Bob, 25 years old (bob@example.com)")
+  })
+})
+
+describe("reverseString", () => {
+  it("should reverse a simple string", () => {
+    expect(reverseString("hello")).toBe("olleh")
+  })
+
+  it("should reverse a string with spaces", () => {
+    expect(reverseString("hello world")).toBe("dlrow olleh")
+  })
+
+  it("should handle single character", () => {
+    expect(reverseString("a")).toBe("a")
+  })
+
+  it("should handle empty string", () => {
+    expect(reverseString("")).toBe("")
+  })
+
+  it("should reverse numbers in string", () => {
+    expect(reverseString("12345")).toBe("54321")
   })
 })
