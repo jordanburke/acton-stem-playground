@@ -21,6 +21,33 @@ Before demoing, ensure:
 - Dependencies are installed: `pnpm install`
 - Everything works: `pnpm validate`
 
+## 🌐 Live Demo Website
+
+**See your code in action!** This repository automatically deploys to GitHub Pages.
+
+**Live URL:** `https://jordanburke.github.io/acton-stem-playground/`
+
+### How it works:
+
+1. Students make changes with Claude Code
+2. Commit and push to main branch
+3. GitHub Actions automatically builds and deploys
+4. See changes live in ~1-2 minutes!
+
+**Perfect for the STEM exhibit:** Students can scan a QR code or visit the URL to see their code running in a real website.
+
+### Quick Deploy Workflow:
+
+```bash
+# After making changes with Claude:
+git add .
+git commit -m "Add my awesome function"
+git push origin main
+
+# Wait ~1-2 minutes, then visit:
+# https://jordanburke.github.io/acton-stem-playground/
+```
+
 ## Demo Scenarios
 
 ### 1. Understanding the Codebase
