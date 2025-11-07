@@ -58,6 +58,9 @@ jobs:
       - name: Build demo React app
         run: cd demo && pnpm build
 
+      - name: Create 404.html for SPA routing
+        run: cp demo/dist/index.html demo/dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
