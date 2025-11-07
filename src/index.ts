@@ -62,3 +62,12 @@ export const formatPerson = (person: Person): string => {
   const emailPart = person.email ? ` (${person.email})` : ""
   return `${person.name}, ${person.age} years old${emailPart}`
 }
+
+/**
+ * Reverses a string
+ * @param str - String to reverse
+ * @returns The reversed string
+ */
+export const reverseString = (str: string): string => {
+  return str.split("").reverse().join("")
+}

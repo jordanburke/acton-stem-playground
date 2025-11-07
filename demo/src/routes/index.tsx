@@ -16,6 +16,7 @@ import {
   IconTemperature,
   IconUser,
   IconCode,
+  IconArrowsLeftRight,
 } from "@tabler/icons-react"
 
 export const Route = createFileRoute("/")({
@@ -139,6 +140,23 @@ function Index() {
           </Group>
           <Text size="sm" c="dimmed">
             Format person objects with TypeScript interfaces
+          </Text>
+        </Card>
+
+        <Card shadow="sm" padding="lg" radius="md" withBorder>
+          <Group mb="md">
+            <ThemeIcon size="lg" radius="md" color="violet">
+              <IconArrowsLeftRight size={20} />
+            </ThemeIcon>
+            <div>
+              <Text fw={600}>String Reverser</Text>
+              <Badge size="sm" variant="light">
+                String Manipulation
+              </Badge>
+            </div>
+          </Group>
+          <Text size="sm" c="dimmed">
+            Reverse any text - letters, words, or entire sentences
           </Text>
         </Card>
       </SimpleGrid>

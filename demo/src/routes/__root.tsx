@@ -9,6 +9,7 @@ import {
   IconFilter,
   IconTemperature,
   IconUser,
+  IconArrowsLeftRight,
 } from "@tabler/icons-react"
 
 export const Route = createRootRoute({
@@ -85,6 +86,13 @@ export const Route = createRootRoute({
               to="/person"
               label="Person Formatter"
               leftSection={<IconUser size={16} />}
+            />
+
+            <NavLink
+              component={Link}
+              to="/reverse"
+              label="String Reverser"
+              leftSection={<IconArrowsLeftRight size={16} />}
             />
           </AppShell.Navbar>
 

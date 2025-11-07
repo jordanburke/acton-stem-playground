@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TemperatureRouteImport } from './routes/temperature'
 import { Route as SumRouteImport } from './routes/sum'
+import { Route as ReverseRouteImport } from './routes/reverse'
 import { Route as PersonRouteImport } from './routes/person'
 import { Route as PalindromeRouteImport } from './routes/palindrome'
 import { Route as FilterRouteImport } from './routes/filter'
@@ -24,6 +25,11 @@ const TemperatureRoute = TemperatureRouteImport.update({
 const SumRoute = SumRouteImport.update({
   id: '/sum',
   path: '/sum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReverseRoute = ReverseRouteImport.update({
+  id: '/reverse',
+  path: '/reverse',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PersonRoute = PersonRouteImport.update({
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/filter': typeof FilterRoute
   '/palindrome': typeof PalindromeRoute
   '/person': typeof PersonRoute
+  '/reverse': typeof ReverseRoute
   '/sum': typeof SumRoute
   '/temperature': typeof TemperatureRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/filter': typeof FilterRoute
   '/palindrome': typeof PalindromeRoute
   '/person': typeof PersonRoute
+  '/reverse': typeof ReverseRoute
   '/sum': typeof SumRoute
   '/temperature': typeof TemperatureRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/filter': typeof FilterRoute
   '/palindrome': typeof PalindromeRoute
   '/person': typeof PersonRoute
+  '/reverse': typeof ReverseRoute
   '/sum': typeof SumRoute
   '/temperature': typeof TemperatureRoute
 }
@@ -79,16 +88,25 @@ export interface FileRouteTypes {
     | '/filter'
     | '/palindrome'
     | '/person'
+    | '/reverse'
     | '/sum'
     | '/temperature'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/filter' | '/palindrome' | '/person' | '/sum' | '/temperature'
+  to:
+    | '/'
+    | '/filter'
+    | '/palindrome'
+    | '/person'
+    | '/reverse'
+    | '/sum'
+    | '/temperature'
   id:
     | '__root__'
     | '/'
     | '/filter'
     | '/palindrome'
     | '/person'
+    | '/reverse'
     | '/sum'
     | '/temperature'
   fileRoutesById: FileRoutesById
@@ -98,6 +116,7 @@ export interface RootRouteChildren {
   FilterRoute: typeof FilterRoute
   PalindromeRoute: typeof PalindromeRoute
   PersonRoute: typeof PersonRoute
+  ReverseRoute: typeof ReverseRoute
   SumRoute: typeof SumRoute
   TemperatureRoute: typeof TemperatureRoute
 }
@@ -116,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/sum'
       fullPath: '/sum'
       preLoaderRoute: typeof SumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reverse': {
+      id: '/reverse'
+      path: '/reverse'
+      fullPath: '/reverse'
+      preLoaderRoute: typeof ReverseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/person': {
@@ -154,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   FilterRoute: FilterRoute,
   PalindromeRoute: PalindromeRoute,
   PersonRoute: PersonRoute,
+  ReverseRoute: ReverseRoute,
   SumRoute: SumRoute,
   TemperatureRoute: TemperatureRoute,
 }
