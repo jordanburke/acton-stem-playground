@@ -1,0 +1,4 @@
+# pnpm 12 requires an explicit choice per dependency build script.
+allowBuilds:
+  esbuild: false # binary ships via @esbuild/<platform> optional deps
+  rollup: false # native binary ships via @rollup/rollup-<platform> optional deps

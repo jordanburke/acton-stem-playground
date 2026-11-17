@@ -1,0 +1,10 @@
+# First-party packages we publish ourselves: the release-age cooldown adds no supply-chain value here.
+minimumReleaseAgeExclude:
+  - "*functype*"
+  - ts-builds
+  - somamcp
+
+# pnpm 12 requires an explicit choice per dependency build script.
+allowBuilds:
+  esbuild: false # binary ships via @esbuild/<platform> optional deps
+  rollup: false # native binary ships via @rollup/rollup-<platform> optional deps
